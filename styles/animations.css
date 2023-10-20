@@ -12,3 +12,86 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes theme-menu__button-element {
+    to {
+      right: 100px;
+    }
+  }
+
+.core {
+    fill: transparent;
+    transition: fill 0.3s 0.03s linear;
+}
+
+.heart:hover .core {
+    fill: var(--contour-color, #000);
+    transition: fill 0.3s linear;
+}
+
+.heart:active .core {
+    fill: var(--heart-color, #FF0000);
+    transition: fill 0.3s linear;
+}
+
+.main-body {
+    fill: transparent;
+    transition: fill 0.3s linear;
+}
+
+.heart:hover .main-body {
+    fill: var(--contour-color, #000);
+    transition: fill 0.3s 0.05s linear;
+}
+
+.heart:active .main-body {
+    fill: var(--heart-color, #FF0000);
+    transition: fill 0.3s 0.05s linear;
+}
+
+.like-icon.is-liked .core {
+    fill: var(--heart-color, #FF0000);
+    transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .main-body {
+    fill: var(--heart-color, #FF0000);
+    transition: fill 0.3s linear;
+}
+
+.contour {
+    fill: var(--contour-color, #000);
+    transition: fill 0.1s linear; 
+}
+
+.like-icon.is-liked .contour {
+    fill: var(--heart-color, #FF0000);
+    transition: fill 0.3s 0.06s linear;
+}
+
+@keyframes heart-scale {
+    from {
+        scale: 1;
+    }
+    to {
+        scale: 1.5;
+    }
+}
+
+.like-icon.is-liked .heart {
+    animation: heart-scale 0.3s 0.1s ease-in;
+    transform-origin: center;
+}
+
+@keyframes sparcs-animation {
+    from {
+        opacity: 0%
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+.like-icon.is-liked .sparks {
+    animation: sparcs-animation 0.3s 0.3s ease-in;
+}
