@@ -21,7 +21,8 @@
     --border: 2px solid #007f0c;
     --stroke-color: #000;
     --contour-color: #00CC14;
-    --heart-color: #FF0000;
+    --heart-color: #F00;
+
 }
 
 :root.theme-light {
@@ -40,7 +41,8 @@
     --border: 2px solid #000;
     --stroke-color: #FFF;
     --contour-color: #000;
-    --heart-color: #FF0000;
+    --heart-color: #F00;
+
 }
 
 @media (prefers-color-scheme: dark) {
@@ -61,7 +63,8 @@
     --stroke-color: #000;
     --contour-color: #00CC14;
     --heart-color: #FF0000;
-    }    
+    }
+
 }
 
 @media (prefers-color-scheme: light) {
@@ -83,4 +86,5 @@
     --contour-color: #000;
     --heart-color: #FF0000;
     }
+
 }

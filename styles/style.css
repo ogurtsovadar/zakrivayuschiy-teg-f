@@ -144,48 +144,41 @@
 .card__image {
   position: relative;
   block-size: clamp(371px, 696px, 696px);
-  background-image: url(../images/get-ready.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  filter: none;
   border: var(--border);
 }
 
+.card__image-content {
+  display: block;
+  inline-size: 100%;
+  block-size: 100%;
+  object-fit: cover;
+}
+
 .blank-list {
-  position: relative;
-  background-image: url(../images/blank-paper.jpg);
   filter: contrast(70%);
 }
 
 .doubts {
-  background-image: url(../images/doubts.jpg);
   filter: grayscale(70%);
 }
 
 .perfection {
-  background-image: url(../images/perfection.jpg);
   filter: brightness(150%);
 }
 
 .support {
-  background-image: url(../images/support.jpg);
   filter: sepia(50%);
 }
 
 .smart-way {
-  background-image: url(../images/smart-way.jpg);
   filter: invert(150%);
-  border: 2px solid var(--invert-color)
 }
 
 .give-up {
-  background-image: url(../images/give-up.jpg);
-  filter: hue-rotate(90deg);
+  filter: hue-rotate(90deg) blur(3px);
 }
 
 .here-point {
-  background-image: url(../images/here-point.jpg);
   filter: saturate(180%) brightness(110%);
 }
 
@@ -295,7 +288,6 @@
   min-block-size: 51px;
   max-block-size: 80px;
   min-inline-size: 305px;
-  max-block-size: 335px;
   padding-inline: 20px;
   padding-block: 15px;
   justify-content: center;
@@ -462,4 +454,5 @@
   .modal-dialog-text {
     grid-column: 2/4;
   }
+
 }
