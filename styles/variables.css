@@ -1,20 +1,19 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
 
-    --main-font: 'Inter-Variable', sans-serif;
-    --accent-font: 'PressStart2P-Regular', sans-serif;
-    --title-weight: 700;
-    --paragraph-weight: 400;
-    --background-color: #FFF;
-    --accent-color: #000;
-    --invert-color: #FFF;
-    --background-image: repeating-linear-gradient(0deg, #d3d3d3 0 2px, transparent 2px 4px),
-    repeating-linear-gradient(90deg, #d3d3d3 0 2px, transparent 2px 4px),
-    linear-gradient(#e7e7e7 0.01%, #1a1a1a);
-    /* с этой точки пока не переносила в themes */
+    --main-font: 'Inter', sans-serif;
+    --accent-font: 'PressStart2P', fantasy;
+    --title-weight: 785;
+    --paragraph-weight: 465;
+    --background-color: #000;
+    --accent-color: #00CC14;
+    --invert-color: #00CC14;
+    --background-image: repeating-linear-gradient(0deg, #000 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(90deg, #000 0 2px, transparent 2px 4px),
+    linear-gradient(#007f0c 0.01%, #004306);
     --main-section-width: clamp(371px, 100%, 696px);
-    --border: 2px solid #000;
-    --stroke-color: #FFF;
-    --contour-color: #000;
+    --border: 2px solid #007f0c;
+    --stroke-color: #000;
+    --contour-color: #00CC14;
     --heart-color: #F00;
 }

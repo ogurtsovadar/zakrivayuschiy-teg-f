@@ -2,7 +2,7 @@
 
 @font-face {
     font-display: swap;
-    font-family: 'PressStart2P-Regular';
+    font-family: 'PressStart2P';
     src:
     local('PressStart2P-Regular'),
     url('../fonts/PressStart2P-Regular.woff') format('woff');
@@ -12,7 +12,7 @@
 
 @font-face {
     font-display: swap;
-    font-family: 'Inter-Variable';
+    font-family: 'Inter';
     src:
     local('Inter-Variable'),
     url('../fonts/Inter-Variable.woff2') format('woff2 supports variations'),

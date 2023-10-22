@@ -19,8 +19,8 @@
   min-block-size: 100dvb;
   font-family: var(--main-font);
   font-variation-settings: 'wght' var(--paragraph-weight);
-  background-color: var(--background-color, #fff);
-  color: var(--accent-color);
+  background-color: var(--background-color, #000);
+  color: var(--accent-color, #00CC14);
   background-image: var(--background-image);
   background-attachment: fixed;
   background-size: cover;
@@ -32,33 +32,34 @@
 /* Хэдер */
 
 .header {
-  inline-size: clamp(371px, 696px, 696px);
-  block-size: clamp(323px, 364px, 364px);
-  padding-block-start: clamp(120px, 133px, 136px);
+  inline-size: clamp(23.188rem, 8.679rem + 38.69vw, 43.5rem);
+  block-size: clamp(20.188rem, 18.357rem + 4.881vw, 22.75rem);
+  padding-block-start: clamp(7.5rem, 6.786rem + 1.905vw, 8.5rem);
   padding-block-end: 25px;
-  margin-block-end: 101px;
+  margin-block-end: 102px;
   display: grid;
   justify-items: center;
-  background-color: var(--background-color, #fff);
+  background-color: var(--background-color, #000);
   border: var(--border);
   text-transform: uppercase;
+  align-self: center;
 }
 
 .header__title {
   font-family: var(--accent-font);
-  font-size: clamp(49px, 65px, 65px);
+  font-size: clamp(3.063rem, 2.348rem + 1.905vw, 4.063rem);
 }
 
 .header__subtitle {
   font-family: var(--accent-font);
-  font-size: clamp(14px, 23px, 23px);
+  font-size: clamp(0.875rem, 0.473rem + 1.071vw, 1.438rem);
   margin-block-start: 20px;
-  margin-block-end: 25px;
+  margin-block-end: 20px;
 }
 
 .header__theme-menu {
-  inline-size: 84px;
-  block-size: 70px;
+  inline-size: 100px;
+  padding-inline-start: 13px;
 }
 
 .theme-menu__list {
@@ -66,11 +67,8 @@
   gap: 7px;
 }
 
-.theme-menu__item {
-  position: relative;
-}
-
 .theme-menu__button {
+  position: relative;
   background-color: transparent;
   border: none;
   cursor: pointer;
@@ -78,8 +76,7 @@
   font-family: var(--accent-font);
   font-size: 14px;
   line-height: normal;
-  transition: opacity 0.3s;
-  transition-timing-function: ease;
+  transition: opacity 0.3s ease;
 }
 
 .theme-menu__button:hover {
@@ -94,7 +91,8 @@
 .theme-menu__button:disabled::before {
   content: "▶";
   position: absolute;
-  right: 97px;
+  inset-inline-start: -16px;
+  inset-block-start: 0;
   animation: theme-menu__button-element 0.5s ease-in-out infinite alternate;
 }
 
@@ -103,8 +101,8 @@
   display: block;
   inline-size: 0%;
   block-size: 2px;
-  background-color: var(--accent-color, #000);
-  transition: none;
+  background-color: var(--accent-color, #00CC14);
+  transition: inline-size 0.3s ease;
 }
 
 .theme-menu__button:focus {
@@ -114,21 +112,21 @@
 
 .theme-menu__button:focus-visible::after {
   inline-size: 100%;
-  transition: inline-size 0.3s;
 }
+
 
 /* Карточки */
 
 .card__section {
-  min-inline-size: 371px;
-  max-inline-size: 696px;
+  inline-size: clamp(23.188rem, 8.679rem + 38.69vw, 43.5rem);
 }
 
-.card {
+.card { 
   block-size: 100%;
-  background-color: var(--background-color, #fff);
+  background-color: var(--background-color, #000);
   border: var(--border);
-  margin-block-end: 50px;
+  margin-block-end: 49px;
+  display: grid;
 }
 
 .card__title {
@@ -138,12 +136,12 @@
   font-size: 18px;
   font-variation-settings: 'wght' var(--title-weight);
   line-height: normal;
-  color: var(--accent-color, #000)
+  color: var(--accent-color, #00CC14)
 }
 
 .card__image {
   position: relative;
-  block-size: clamp(371px, 696px, 696px);
+  block-size: clamp(23.188rem, 8.679rem + 38.69vw, 43.5rem);
   border: var(--border);
 }
 
@@ -186,25 +184,24 @@
 .card__label {
   position: absolute;
   z-index: 3;
-  top: 25px;
-  right: 25px;
-  color: var(--accent-color, #000);
+  top: 22px;
+  right: 27px;
+  color: var(--accent-color, #00CC14);
   font-family: var(--accent-font);
   font-size: 14px;
   font-weight: var(--paragraph-weight);
   line-height: normal;
   text-shadow:
-  0 0 2px var(--stroke-color),
-  0 0 2px var(--stroke-color);
+  0 0 1px var(--stroke-color, #000);
   opacity: 0.5;
   mix-blend-mode: hard-light;
 }
 
-@supports((text-stroke: 0.7px var(--stroke-color, #fff)) or (-webkit-text-stroke: 0.7px var(--stroke-color))) {
+@supports((text-stroke: 1px var(--stroke-color)) or (-webkit-text-stroke: 1px var(--stroke-color))) {
 
   .card__label {
-  -webkit-text-stroke: 0.7px var(--stroke-color, #fff);
-  text-stroke: 0.7px var(--stroke-color, #fff);
+  -webkit-text-stroke: 1px var(--stroke-color, #000);
+  text-stroke: 1px var(--stroke-color, #fff);
   text-shadow: none;
   }
 }
@@ -214,21 +211,31 @@
   gap: 27px;
   margin-inline: 24px;
   margin-block-start: 30px;
-  inline-size: 646px;
 }
 
 .card__paragraph {
   font-size: 18px;
   font-variation-settings: 'wght' var(--paragraph-weight);
   line-height: 116.667%;
-  color: var(--accent-color, #000);
+  color: var(--accent-color, #00CC14);
+}
+
+.button {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color, #000);
+  border: var(--border);
+  transition: box-shadow 0.3s ease;
+  position: relative;
 }
 
 .button__like-section {
   display: flex;
-  justify-content: flex-end;
+  justify-content: end;
   align-items: center;
-  gap: 12px;
+  gap: 5px;
   margin-block: 25px;
   margin-inline-end: 25px;
 }
@@ -249,21 +256,18 @@
   opacity: 0%;
 }
 
+.like-icon {
+  block-size: 37px;
+  inline-size: 37px;
+}
+
 .card__like-button {
-  cursor: pointer;
-  display: flex;
   block-size: 37px;
   inline-size: 128px;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-color, #fff);
-  border: var(--border);
-  transition: box-shadow 0.3s;
-  position: relative;
 }
 
 .button__text {
-  color: var(--invert-color, #fff);
+  color: var(--invert-color, #00CC14);
   font-family: var(--accent-font);
   font-size: 14px;
   font-weight: var(--paragraph-weight);
@@ -277,52 +281,40 @@
 .floppy {
   inline-size: 21px;
   block-size: 21px;
-  color: var(--invert-color, #fff);
+  color: var(--invert-color, #00CC14);
   mix-blend-mode: difference;
 }
 
 .save_button {
-  cursor: pointer;
-  display: flex;
   gap: 8px;
   min-block-size: 51px;
   max-block-size: 80px;
   min-inline-size: 305px;
   padding-inline: 20px;
   padding-block: 15px;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--background-color, #fff);
-  border: var(--border);
-  transition: box-shadow 0.3s;
-  position: relative;
 }
 
 /* Состояния кнопок */
 
-.card__like-button:focus,
-.save_button:focus {
+.button:focus {
   outline: none;
 }
 
-.card__like-button:focus-visible,
-.save_button:focus-visible {
+.button:focus-visible {
   outline: none;
-  box-shadow: 2px 2px var(--accent-color, #000);
+  box-shadow: 2px 2px var(--accent-color, #00CC14);
 }
 
-.card__like-button::before,
-.save_button::before {
+.button::before {
   content: "";
   position: absolute;
   inline-size: 0%;
   block-size: 0%;
   transform: scaleX(0);
-  background-color: var(--accent-color, #000);
+  background-color: var(--accent-color, #00CC14);
 }
 
-.card__like-button:hover::before,
-.save_button:hover::before {
+.button:hover::before {
   inline-size: 100%;
   block-size: 100%;
   transform: scaleX(1);
@@ -335,7 +327,7 @@
 }
 
 .card__icon-button:focus-visible {
-  outline: 2px solid var(--accent-color, #000);
+  outline: 2px solid var(--accent-color, #00CC14);
 }
 
 /* Модальное окно */
@@ -344,7 +336,7 @@
   inline-size: 357px;
   block-size: 193px;
   border: var(--border);
-  background: var(--background-color, #FFF);
+  background: var(--background-color, #000);
   padding-inline: 31.5px;
   padding-block: 31.5px;
 }
@@ -353,6 +345,7 @@
   display: grid;
   grid-template-rows: 58px 38px;
   gap: 30px 20px;
+
 }
 
 .modal-dialog[open]::backdrop {
@@ -363,12 +356,12 @@
 .modal-dialog-floppy {
   inline-size: 39px;
   block-size: 39px;
-  color: var(--invert-color, #FFF);
+  color: var(--invert-color, #00CC14);
   mix-blend-mode: difference;
 }
 
 .modal-dialog-text {
-  color: var(--accent-color, #000);
+  color: var(--accent-color, #00CC14);
   font-family: var(--accent-font);
   font-size: 14px;
   font-weight: var(--paragraph-weight);
@@ -376,19 +369,15 @@
   text-transform: uppercase;
 }
 
+.modal-dialog-form {
+  grid-column: 1/4;
+}
+
 .modal-dialog-button {
-  color: var(--accent-color, #000);
-  font-family: var(--accent-font);
-  font-size: 14px;
-  font-weight: var(--paragraph-weight);
-  line-height: 90%;
   text-transform: uppercase;
-  border: var(--border);
-  background-color: var(--background-color, #fff);
   padding-inline: 17px;
   padding-block: 9px;
-  grid-column: 1/4;
-  cursor: pointer;
+  inline-size: 100%;
 }
 
 /* Адаптация под мобилку */
@@ -396,39 +385,29 @@
 @media (width <= 375px) {
 
   .header {
-    inline-size: 100%;
-    block-size: clamp(323px, 323px, 364px);
-    padding-block-start: clamp(120px, 120px, 136px);
-    padding-block-end: 25px;
-    margin-block-end: 101px;
+    inline-size: 100vw;
   }
-  
+
   .header__title {
-    font-size: clamp(49px, 49px, 65px);
+    margin-block-start: -6px;
+    font-size: clamp(2.438rem, -1.199rem + 18.182vw, 3.063rem);
   }
-  
+
   .header__subtitle {
-    font-size: clamp(14px, 14px, 23px);
-    margin-block-end: 23px;
+    margin-block-start: 13px;
   }
-  
-  .header__theme-menu {
-    inline-size: 72px;
-    block-size: 75px;
-  }
-  
-  .card__image {
-    block-size: clamp(371px, 371px, 696px);
+
+  .card__section {
+    inline-size: 100vw;
   }
   
   .card__label {
-    top: 23px;
-    right: 11px;
+    top: 19px;
+    right: 16px;
   }
   
   .card__text {
     margin-inline: 25px;
-    inline-size: 317px;
   }
   
   .floppy {
